@@ -44,7 +44,7 @@
                         options.complete.apply($new, [ step - 1 ]);
                     });
                 } else {
-                    $new.hide().prependTo("body").fadeIn(options.fade, function() {
+                    $new.hide().appendTo("body").fadeIn(options.fade, function() {
                         $("body").trigger("vegascomplete", [ this, step - 1 ]);
                         options.complete.apply(this, [ step - 1 ]);
                     });
@@ -100,7 +100,7 @@
             if (options.opacity) {
                 $overlay.css("opacity", options.opacity);
             }
-            $overlay.prependTo("body");
+            $overlay.appendTo("body");
             return $.vegas;
         },
         slideshow: function(settings, keepPause) {
@@ -279,7 +279,7 @@
         $img.css(properties);
     }
     function loading() {
-        $loading.prependTo("body").fadeIn();
+        $loading.appendTo("body").fadeIn();
     }
     function loaded() {
         $loading.fadeOut("fast", function() {
